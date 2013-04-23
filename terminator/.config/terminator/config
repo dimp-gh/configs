@@ -1,0 +1,38 @@
+[global_config]
+  window_state = maximise
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = mouse
+  title_transmit_fg_color = "#acbc90"
+  title_inactive_fg_color = "#acbc90"
+  borderless = True
+  title_transmit_bg_color = "#1e2320"
+  title_inactive_bg_color = "#2e3330"
+[keybindings]
+  hide_window = <Primary>grave
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#1e2320:#705050:#60b48a:#dfaf8f:#506070:#dc8cc3:#8cd0d3:#dcdccc:#709080:#dca3a3:#c3bf9f:#f0dfaf:#94bff3:#ec93d3:#93e0e3:#ffffff"
+    copy_on_selection = True
+    visible_bell = True
+    use_system_font = False
+    custom_command = zsh
+    active_encodings = ANSI_X3.4-1968, UTF-8, ISO-8859-1
+    foreground_color = "#dcdccc"
+    use_custom_command = True
+    exit_action = restart
+    antialias = False
+    font = Monaco 10
+    background_color = "#3a3a3a"
+    cursor_blink = False
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
