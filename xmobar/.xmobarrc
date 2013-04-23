@@ -1,0 +1,15 @@
+Config { font = "xft:Droid Sans Mono-10:antialias=true"
+       , bgColor = "#171717" --black
+       , fgColor = "grey" --grey
+       , position = Top
+       , commands = [ --Run Weather "UMMS" ["-t","<station>: <tempC>C"] 3600
+                      Run Cpu [] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Battery ["-t","Bat: <left>% (~<timeleft>)"] 10 --useful template parameter <timelleft>
+                    , Run Date "%H:%M:%S %b %d %Y" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader%}{<fc=#88BBBB>%date%</fc> | %cpu% | %memory% | %battery%"
+       }
