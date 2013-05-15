@@ -44,7 +44,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
-
 ;;
 ;; retitle emacs window
 ;;
@@ -242,3 +241,5 @@ middle"
 (require 'smex)
 (smex-initialize)                                                               
 (global-set-key (kbd "M-X") 'smex)                                             
+
+(elpy-enable)
