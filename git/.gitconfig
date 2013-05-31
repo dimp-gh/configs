@@ -19,3 +19,4 @@
 	hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
 	type = cat-file -t
 	dump = cat-file -p
+        last = "!git log | head -1 | awk '{print $2}'"
