@@ -243,3 +243,9 @@ middle"
 (global-set-key (kbd "M-X") 'smex)                                             
 
 (elpy-enable)
+
+;; Good stuff, but messes up a bit in python-mode.
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
