@@ -245,7 +245,12 @@ middle"
 (elpy-enable)
 
 ;; Good stuff, but messes up a bit in python-mode.
-(require 'whitespace)
-(setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face lines-tail))
-(add-hook 'prog-mode-hook 'whitespace-mode)
+;; (require 'whitespace)
+;; (setq whitespace-line-column 80) ;; limit line length
+;; (setq whitespace-style '(face lines-tail))
+;; (add-hook 'prog-mode-hook 'whitespace-mode)
+(setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el
+
+(find-file "~/src/devlog.org")
+
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
