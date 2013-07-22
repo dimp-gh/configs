@@ -6,8 +6,9 @@
 (scroll-bar-mode 0)
 
 
-(require 'linum)
 (global-linum-mode)
+(setq linum-format "%d ")
+(require 'linum-off)
 
 (require 'windmove)
 (windmove-default-keybindings 'meta)
