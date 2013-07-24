@@ -1,9 +1,22 @@
+(setq user-full-name "Dmitry Pribysh")
+(setq user-mail-address "dmand@yandex.ru")
+
+(add-to-list 'load-path  "~/.emacs.d/")
+
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
-
-(require 'linum)
 (global-linum-mode)
+(setq linum-format "%d ")
+(require 'linum-off)
+
+(require 'windmove)
+(windmove-default-keybindings 'meta)
+
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (defun set-frame-size-according-to-resolution ()
   (interactive)
@@ -23,26 +36,6 @@
          (cons 'height (/ (- (x-display-pixel-height) 200)
                              (frame-char-height)))))))
 (set-frame-size-according-to-resolution)
-
-(require 'windmove)
-(windmove-default-keybindings 'meta)
-
-;(define-key global-map (kbd "<XF86Back>") 'previous-buffer)
-;(define-key global-map (kbd "<XF86Forward>") 'next-buffer)
-(global-set-key [?\C-,] 'previous-buffer)
-(global-set-key [?\C-.] 'next-buffer)
-;(define-key global-map (kbd "<XF86Close>") 'kill-this-buffer)
-;(define-key global-map (kbd "<XF86New>") 'switch-to-buffer)
-
-
-;(setq erlang-root-dir "/usr/lib/erlang")
-;(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
-;(require 'erlang-start)
-
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;;
 ;; retitle emacs window
@@ -115,80 +108,34 @@ middle"
    ((equal "right" (win-resize-left-or-right)) (enlarge-window-horizontally -1))
    ((equal "mid" (win-resize-left-or-right)) (enlarge-window-horizontally 1))))
 
-(global-set-key [S-M-down] 'win-resize-mi2nimize-vert)
-(global-set-key [S-M-up] 'win-resize-enlarge-vert)
-(global-set-key [S-M-left] 'win-resize-minimize-horiz)
-(global-set-key [S-M-right] 'win-resize-enlarge-horiz)
-(global-set-key [S-M-up] 'win-resize-enlarge-horiz)
-(global-set-key [S-M-down] 'win-resize-minimize-horiz)
-(global-set-key [S-M-left] 'win-resize-enlarge-vert)
-(global-set-key [S-M-right] 'win-resize-minimize-vert)
-
-
 (setq inhibit-splash-screen t)
 
 
 (require 'sr-speedbar)
-(global-set-key (kbd "<f11>") 'sr-speedbar-toggle)
 
-;; (load-file "/usr/share/emacs/site-lisp/cedet/common/cedet.el")
-
-
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.scala\\'" . scala-mode))
-(add-to-list 'load-path  "~/.emacs.d/")
-
-;(require 'lambda-mode)
-
-;(require 'minimap)
-
-
-;(require 'highlight-symbol)
 
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
 
 
-;(load "auctex.el" nil t t)
-;(load "preview-latex.el" nil t t)
-
-
-;(require 'virtualenv)
-;;(virtualenv-workon t)
-(setq python-command "/usr/bin/python3.2")
-
-
 (set-default-font "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 
+;; org mode stuff
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t!)" "STARTED(s!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+              (sequence "OPEN(O!)" "|" "CLOSED(C!)"))))
 
-;; (global-set-key "\e\el" 'org-store-link)
-;; (global-set-key "\e\ec" 'org-capture)
-;; (global-set-key "\e\ea" 'org-agenda)
-;; (global-set-key "\e\eb" 'org-iswitchb)
- 
-;; (setq org-agenda-files (quote ("~/.org/")))
- 
-;my prefer identation
-;(setq org-startup-indented t)
- 
-;; ;;logging stuff
-;; (setq org-log-done (quote time))
-;; (setq org-log-into-drawer nil)
-;; (setq org-log-redeadline (quote note))
-;; (setq org-log-reschedule (quote time))
-;; ;todo keywords
-;; (setq org-todo-keywords
-;;       (quote ((sequence "TODO(t!)" "NEXT(n!)" "WAITING(w@/!)" "STARTED(s!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-;;               (sequence "QUOTE(Q!)" "QUOTED(D!)" "|" "APPROVED(A@)" "EXPIRED(E@)" "REJECTED(R@)")
-;;               (sequence "OPEN(O!)" "|" "CLOSED(C!)"))))
-
-(global-set-key [C-kp-add] 'text-scale-increase)
-(global-set-key [C-kp-subtract] 'text-scale-decrease)
-
-
-;(require 'solarized-definitions)
-(require 'zenburn-theme)
+;; solarized and monokai are accessible via 
+;; color-theme-solarized and color-theme-monokai
+;; nice grey theme
+(when (display-graphic-p)
+  (require 'zenburn-theme))
+;; nice brown-red theme
+;; (require 'birds-of-paradise-plus-theme)
+;; almost nice tango theme
+;; (require 'color-theme-tango)
+;; color-theme-sanityinc-tomorrow-eighties is also quite nice
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -203,6 +150,7 @@ middle"
  '(speedbar-show-unknown-files t)
  '(speedbar-smart-directory-expand-flag t)
  '(speedbar-use-images nil)
+ '(speedbar-directory-unshown-regexp "^$")
  '(undo-limit 100000)
  '(undo-strong-limit 150000))
 (custom-set-faces
@@ -212,31 +160,7 @@ middle"
  ;; If there is more than one, they won't work right.
  )
 
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (setq indent-tabs-mode t)
-	    (setq python-indent 4)
-	    (setq tab-width 4)))
-
-
-;; (require 'pymacs)
-;; (pymacs-load "ropemacs" "rope-")
-
-
-(setq speedbar-directory-unshown-regexp "^$")
-
-
-(add-hook 'org-mode-hook
-	  (lambda ()
-	    (visual-line-mode 1)))
-
-(powerline-default-theme)
-
-(cd "~/src")
-
-
-(global-set-key (kbd "C-x C-/") 'comment-region)
-(global-set-key (kbd "C-S-x C-?") 'uncomment-region)
+(powerline-vim-theme)
 
 (require 'smex)
 (smex-initialize)                                                               
@@ -244,13 +168,96 @@ middle"
 
 (elpy-enable)
 
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (setq indent-tabs-mode t)
+	    (setq python-indent 4)
+	    (setq tab-width 4)))
+
 ;; Good stuff, but messes up a bit in python-mode.
-;; (require 'whitespace)
-;; (setq whitespace-line-column 80) ;; limit line length
-;; (setq whitespace-style '(face lines-tail))
-;; (add-hook 'prog-mode-hook 'whitespace-mode)
-(setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(setq load-home-init-file t)
 
-(find-file "~/src/devlog.org")
+;; add cyrillic layout, change on C-\
+(set-input-method "russian-computer")
 
+;; Line-wrapping mode.
+(global-visual-line-mode t)
+
+;; Turn on snippets
+(yas-global-mode t)
+
+;; Save backup files in ~/.esaves, not in curdir.
+(setq backup-directory-alist `(("." . "~/.esaves"))
+      backup-by-copying t
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
+
+;; Scala stuff goes here
+(require 'scala-mode2)
+
+;; Load the ensime lisp code...
+;; TODO
+(add-to-list 'load-path "~/.emacs.d/ensime_2.10.0-0.9.8.9/elisp/")
+(require 'ensime)
+
+;; This step causes the ensime-mode to be started whenever
+;; scala-mode is started for a buffer. You may have to customize this step
+;; if you're not using the standard scala mode.
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+;; configure how ensime highlights errors
+(custom-set-faces
+ '(ensime-errline ((((class color) (background dark)) nil)))
+ '(ensime-errline-highlight ((t (:background "firebrick2"))))
+ )
+
+;; splitting emacs window horizontally
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
+;; zoning just for fun
+(require 'zone)
+(zone-when-idle 120)
+
+;; setting defaukt and prefferable encoding
+(prefer-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+
+
+;; redefined keys go here
+(global-set-key [S-M-down] 'win-resize-mi2nimize-vert)
+(global-set-key [S-M-up] 'win-resize-enlarge-vert)
+(global-set-key [S-M-left] 'win-resize-minimize-horiz)
+(global-set-key [S-M-right] 'win-resize-enlarge-horiz)
+(global-set-key [S-M-up] 'win-resize-enlarge-horiz)
+(global-set-key [S-M-down] 'win-resize-minimize-horiz)
+(global-set-key [S-M-left] 'win-resize-enlarge-vert)
+(global-set-key [S-M-right] 'win-resize-minimize-vert)
+
+(global-set-key [?\C-,] 'previous-buffer)
+(global-set-key [?\C-.] 'next-buffer)
+
+(global-set-key (kbd "<f11>") 'sr-speedbar-toggle)
+
+(global-set-key [C-kp-add] 'text-scale-increase)
+(global-set-key [C-kp-subtract] 'text-scale-decrease)
+
+(global-set-key (kbd "C-x C-/") 'comment-region)
+(global-set-key (kbd "C-S-x C-?") 'uncomment-region)
+
+;; auto-mode lists go here
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.scala\\'" . scala-mode))
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
+
+;; start emacs server to enable opening documents in it via emacsclient
+(server-start)
+
+;; go to sources directory
+(cd "~/src")
