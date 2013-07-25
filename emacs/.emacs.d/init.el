@@ -9,7 +9,7 @@
 (require 'my-color-theme)
 (require 'my-speedbar-stuff)
 (require 'my-auto-complete-stuff)
-(require 'my-snippet-stuff)
+(require 'my-yasnippet-stuff)
 (require 'my-python-stuff)
 (require 'my-scala-stuff)
 (require 'my-key-bindings)
