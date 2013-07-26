@@ -8,7 +8,9 @@
 	yasnippet
 	elpy
 	scala-mode2
-	markdown-mode))
+	markdown-mode
+	projectile
+	ack-and-a-half))
 
 (require 'package)
 (package-initialize)
