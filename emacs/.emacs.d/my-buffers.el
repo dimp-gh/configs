@@ -100,10 +100,11 @@ middle"
 (set-default-font "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 
 
-;; disabling scrollbar and toolbar
+;; disabling scrollbar, toolbar and maybe menu bar
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-(menu-bar-mode 0)
+(when (not (display-graphic-p))
+  (menu-bar-mode 0))
 
 ;; moving between buffers with meta-key
 (require 'windmove)
