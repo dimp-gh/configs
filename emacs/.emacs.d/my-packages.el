@@ -10,7 +10,8 @@
 	scala-mode2
 	markdown-mode
 	projectile
-	ack-and-a-half))
+	ack-and-a-half
+	zenburn-theme))
 
 (require 'package)
 (package-initialize)
