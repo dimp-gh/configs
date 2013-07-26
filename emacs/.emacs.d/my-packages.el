@@ -3,7 +3,7 @@
 ;; There goes list of all packages i want to get installed
 (setq my-bundle
       '(powerline
-	speedbar
+	sr-speedbar
 	auto-complete
 	yasnippet
 	elpy
