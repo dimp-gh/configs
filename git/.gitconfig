@@ -3,6 +3,7 @@
 	email = dmand@yandex.ru
 [core]
 	editor = nano
+	excludesfile = "~/.gitignore"
 [color]
         ui = true
 [cola]
