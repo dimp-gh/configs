@@ -1,0 +1,17 @@
+# typical python stuff
+*.pyc
+__pycache__
+
+# emacs stuff
+*_flymake.py
+*~
+#*#
+
+# crouton stuff
+.ratpoison_history
+
+# scala stuff
+*.class
+
+# latex stuff
+*.pdf
