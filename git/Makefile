@@ -3,4 +3,4 @@
 gitfiles = .gitconfig .gitignore
 
 install:
-	-@ cp $(gitfiles) $(HOME)
+	cp $(gitfiles) $(HOME)
