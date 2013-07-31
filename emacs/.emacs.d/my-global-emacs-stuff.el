@@ -29,3 +29,6 @@
 
 ;; set up Projectile
 (projectile-global-mode)
+
+;; set up Recentf
+(recentf-mode)
