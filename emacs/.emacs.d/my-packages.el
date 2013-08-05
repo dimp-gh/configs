@@ -11,7 +11,8 @@
 	markdown-mode
 	projectile
 	ack-and-a-half
-	zenburn-theme))
+	zenburn-theme
+	erlang))
 
 (require 'package)
 (package-initialize)
