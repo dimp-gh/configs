@@ -15,3 +15,6 @@ __pycache__
 
 # latex stuff
 *.pdf
+
+# erlang bytecode
+*.beam
