@@ -1,13 +1,13 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=~/oh-my-zsh/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="afowler"
-
-#pmcgee is good
+ZSH_THEME="mytheme"
+#"pmcgee" is good
+#"gentoo" is also nice
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,14 +34,14 @@ ZSH_THEME="afowler"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux command-not-found git-extras git-remote-branch gnu-utils history pip python scala systemd)
+plugins=(git colorize debian archlinux command-not-found git-extras \
+    git-remote-branch gnu-utils history pip python scala sbt systemd terminator)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
 alias scan=nmap -sP
 alias got=git
 alias gut=git
 alias g=git
-
+alias scala="scala -J-jamvm"
