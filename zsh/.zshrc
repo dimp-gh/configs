@@ -45,3 +45,6 @@ alias got=git
 alias gut=git
 alias g=git
 alias scala="scala -J-jamvm"
+
+# for colorful crosh
+export TERM=xterm-256color
