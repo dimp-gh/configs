@@ -12,6 +12,7 @@
 (require 'my-yasnippet-stuff)
 (require 'my-python-stuff)
 (require 'my-scala-stuff)
+(require 'my-flymake-stuff)
 (require 'my-key-bindings)
 (require 'my-auto-modes)
 (require 'my-global-emacs-stuff)
