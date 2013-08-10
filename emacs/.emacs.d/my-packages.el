@@ -12,7 +12,8 @@
 	projectile
 	ack-and-a-half
 	zenburn-theme
-	erlang))
+	erlang
+	calfw))
 
 (require 'package)
 (package-initialize)

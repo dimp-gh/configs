@@ -21,3 +21,6 @@
 ;; universal hotkey for commenting/uncommenting code
 (global-set-key (kbd "C-x C-/") 'comment-region)
 (global-set-key (kbd "C-S-x C-?") 'uncomment-region)
+
+;; open calendar on `C-x g c`
+(global-set-key (kbd "C-x g c") 'open-google-calendar)

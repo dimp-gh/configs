@@ -14,6 +14,7 @@
 (require 'my-scala-stuff)
 (require 'my-flymake-stuff)
 (require 'my-key-bindings)
+(require 'my-calendar-stuff)
 (require 'my-auto-modes)
 (require 'my-global-emacs-stuff)
 (require 'my-zone-stuff)
