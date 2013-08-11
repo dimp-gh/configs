@@ -24,3 +24,6 @@
 
 ;; open calendar on `C-x g c`
 (global-set-key (kbd "C-x g c") 'open-google-calendar)
+
+;; lacarte: use menu through minibuffer with completion
+(global-set-key [?\e ?\M-x] 'lacarte-execute-command)

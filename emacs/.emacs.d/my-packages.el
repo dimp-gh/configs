@@ -15,6 +15,7 @@
 	erlang
 	calfw
 	magit
+	lacarte
 ))
 
 (require 'package)
