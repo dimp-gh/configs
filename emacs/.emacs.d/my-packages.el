@@ -13,7 +13,9 @@
 	ack-and-a-half
 	zenburn-theme
 	erlang
-	calfw))
+	calfw
+	magit
+))
 
 (require 'package)
 (package-initialize)
