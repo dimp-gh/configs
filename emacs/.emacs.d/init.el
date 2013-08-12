@@ -18,3 +18,6 @@
 (require 'my-auto-modes)
 (require 'my-global-emacs-stuff)
 (require 'my-zone-stuff)
+
+;; device-specific overrides (e.g. no `zoning` on chromebook) go here
+(require 'my-overrides)
