@@ -49,10 +49,3 @@ alias scala="scala -J-jamvm"
 # for colorful crosh
 export TERM=xterm-256color
 
-# Stuff for displaying current time in the right corner
-RPROMPT='[%D{%L:%M:%S %p}]'
-TMOUT=1
-
-TRAPALRM() {
-    zle reset-prompt
-}

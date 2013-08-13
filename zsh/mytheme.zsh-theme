@@ -10,3 +10,11 @@ RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
+
+# Stuff for displaying current time in the right corner
+RPROMPT='%{${fg[green]}%}[%D %*]%{$reset_color%}'
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
