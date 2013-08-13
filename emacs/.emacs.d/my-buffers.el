@@ -128,3 +128,15 @@ middle"
 
 ;; Line-wrapping mode.
 (global-visual-line-mode t)
+
+;; Nice split line for buffer borders in console mode:
+;; Stolen from http://stackoverflow.com/a/18211568/1378617
+
+;; Reverse colors for the border to have nicer line
+(set-face-inverse-video-p 'vertical-border nil)
+(set-face-background 'vertical-border (face-background 'default))
+
+;; Set symbol for the border
+(set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?┃))
