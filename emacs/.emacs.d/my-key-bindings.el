@@ -26,4 +26,9 @@
 (global-set-key (kbd "C-x g c") 'open-google-calendar)
 
 ;; lacarte: use menu through minibuffer with completion
+;; runs on `ESC M-x`
 (global-set-key [?\e ?\M-x] 'lacarte-execute-command)
+
+;; typing `M-x magit status` all the time is kinda painful
+;; so, binding it to the `C-x g s`
+(global-set-key (kbd "C-x g s") 'magit-status)
