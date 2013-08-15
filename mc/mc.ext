@@ -739,7 +739,7 @@ type/^Parity\ Archive\ Volume\ Set
 
 # Default target for anything not described above
 default/*
-	Open=%var{EDITOR:emacsclient} %f
+	Open=echo "not a chance"
 	View=%var{EDITOR:emacsclient} %f
 
 
