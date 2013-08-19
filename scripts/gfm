@@ -1,0 +1,4 @@
+#!/bin/sh
+# Render file argument as github flavored markdown and open it in lynx browser
+
+cat $1 | ghmarkdown | lynx -stdin

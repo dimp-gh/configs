@@ -1,0 +1,28 @@
+#!/usr/bin/python2
+"""
+Reads markdowned input from stdin, renders it as github flavored markdown
+and prints resulting html.
+"""
+import fileinput
+import json
+import requests
+
+def render_content(text):
+	"""
+	Renders the specified github flavoured markdown.
+	Stolen from https://github.com/joeyespo/grip
+	"""
+	url = 'https://api.github.com/markdown'
+	data = {'text': text, 'mode': 'gfm'}
+	data = json.dumps(data)
+	headers = {'content-type': 'text/plain'}
+	r = requests.post(url, headers=headers, data=data)
+	return r.text
+
+def main():
+	markdown = '\n'.join(line for line in fileinput.input())
+	html = render_content(markdown)
+	print html
+
+if __name__ == '__main__':
+	main()
