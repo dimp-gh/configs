@@ -140,3 +140,8 @@ middle"
 (set-display-table-slot standard-display-table
                         'vertical-border
                         (make-glyph-code ?┃))
+
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))

@@ -32,3 +32,5 @@
 ;; typing `M-x magit status` all the time is kinda painful
 ;; so, binding it to the `C-x g s`
 (global-set-key (kbd "C-x g s") 'magit-status)
+
+(global-set-key (kbd "C-x K") 'kill-other-buffers)
