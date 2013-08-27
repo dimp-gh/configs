@@ -33,4 +33,9 @@
 ;; so, binding it to the `C-x g s`
 (global-set-key (kbd "C-x g s") 'magit-status)
 
+;; killing all other buffers
 (global-set-key (kbd "C-x K") 'kill-other-buffers)
+
+;; sudo stuff
+(global-set-key (kbd "C-x M-s") 'sudo-unset-ro-or-save)
+(global-set-key (kbd "C-x M-f") 'sudo-find-file)
