@@ -121,7 +121,7 @@ middle"
 
 ;; Good stuff, but messes up a bit in python-mode.
 (require 'whitespace)
-(setq whitespace-line-column 80)
+(setq whitespace-line-column 100)
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (setq load-home-init-file t)
