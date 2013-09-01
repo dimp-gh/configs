@@ -32,3 +32,8 @@
 
 ;; set up Recentf
 (recentf-mode)
+
+;; set up org-journal
+(require 'org-journal)
+(custom-set-variables
+ '(org-journal-dir "~/diar/"))

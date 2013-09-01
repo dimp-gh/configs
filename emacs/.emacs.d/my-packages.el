@@ -16,6 +16,7 @@
 	calfw
 	magit
 	lacarte
+	org-journal
 ))
 
 (require 'package)
