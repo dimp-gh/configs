@@ -17,6 +17,7 @@
 	magit
 	lacarte
 	org-journal
+	auctex
 ))
 
 (require 'package)
