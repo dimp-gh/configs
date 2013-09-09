@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+  echo "Error: first argument should be image to write"
+  fail=1
+fi
+if [ "$2" = "" ]; then
+  echo "Error: second argument should be device to write image to"
+  fail=1
+fi
+if [ "$fail" = "1" ]; then
+  exit 1
+fi
+
+
+if [ "$2" = "/dev/sda" ]; then
+  echo "I won't let you write on /dev/sda"
+  echo "Also, you owe me a beer for that."
+  exit 1
+fi
+
+dd bs=1M if="$1" of="$2" && sync && beep && sync && beep
