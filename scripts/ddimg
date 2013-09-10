@@ -5,8 +5,10 @@ if [ "$1" = "" ]; then
   fail=1
 fi
 if [ "$2" = "" ]; then
-  echo "Error: second argument should be device to write image to"
-  fail=1
+  echo "Warning: you didn't specify device to write image to. I will assume that this is /dev/sdb"
+  disk="/dev/sdb"
+else
+  disk="$2"
 fi
 if [ "$fail" = "1" ]; then
   exit 1
@@ -19,4 +21,6 @@ if [ "$2" = "/dev/sda" ]; then
   exit 1
 fi
 
-dd bs=1M if="$1" of="$2" && sync && beep && sync && beep
+image="$1"
+
+dd bs=1M if="$image" of="$disk" && sync && beep && sync && beep
