@@ -1,10 +1,12 @@
 \documentclass[a4paper,12pt]{report}
 
-% стафф для математических формул и кириллицы
 \usepackage{latexsym}
+% cyrillic support
 \usepackage[utf8]{inputenc}
-\usepackage[T1,T2A]{fontenc}
-\usepackage[russian,english]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+% hyperrefs in table of contents
+\usepackage{hyperref}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -13,17 +15,21 @@
     urlcolor=black
 }
 
+% using "chapter" as a "lecture" 
+\addto\captionsrussian{\renewcommand{\chaptername}{Лекция}}
+\newcommand{\lecture}{\chapter}
+
 \author{Прибыш Дмитрий\\
   \texttt{dmand@yandex.ru}}
 \title{Конспект по \%предмет\%}
 \date{Осень 2013}
-%\pagestyle{headings}
+\pagestyle{headings}
 \frenchspacing
 
 \begin{document}
 \maketitle
 \tableofcontents
-\chapter{Раздел}
+\lecture{Лекция}
 \section{Тема 1}
 Текст темы 1
 \section{Тема 2}
