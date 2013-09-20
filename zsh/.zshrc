@@ -49,3 +49,14 @@ alias scala="scala -J-jamvm"
 # for colorful crosh
 export TERM=xterm-256color
 
+# rewriting postfix 'bitch' from each cmd into prefix 'sudo'
+# f.e. `poweroff bitch` -> `sudo poweroff`
+#      'dd if=/dev/zero of=/dev/sda bitch' -> 'sudo dd if=/dev/zero of=/dev/sda'
+rewrite-bitch-sudo() {
+    if [[ $BUFFER =~ ".* bitch" ]]; then
+	NO_BITCH=`echo "$BUFFER" | sed 's/ bitch//'`
+	BUFFER="sudo $NO_BITCH"
+    fi
+    zle .$WIDGET "$@";
+}
+zle -N accept-line rewrite-bitch-sudo
