@@ -18,7 +18,6 @@
 	lacarte
 	org-journal
 	auctex
-	haskell-mode
 ))
 
 (require 'package)
