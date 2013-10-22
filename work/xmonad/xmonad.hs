@@ -61,8 +61,11 @@ main = do
          , ((mod4Mask, xK_a),                 spawn "dmenu_run -fn 'Ubuntu Mono-11'")
          , ((modm, xK_a),                     spawn "dmenu_run -fn 'Ubuntu-Mono-11'")
          , ((modm, xK_y),                     focusUrgent )
-         , ((shiftMask .|. controlMask, xK_bracketleft),       spawn "amixer -c 1 sset Master 5%-")
-         , ((shiftMask .|. controlMask, xK_bracketright),      spawn "amixer -c 1 sset Master 5%+")
+         , ((shiftMask .|. controlMask, xK_bracketleft),       spawn "amixer -c 0 sset Master 5%-")
+         , ((shiftMask .|. controlMask, xK_bracketright),      spawn "amixer -c 0 sset Master 5%+")
+         , ((0, xF86XK_AudioLowerVolume),      spawn "amixer -c 0 sset Master 5%-")
+         , ((0, xF86XK_AudioRaiseVolume),      spawn "amixer -c 0 sset Master 5%+")
+
          --, ((0, xF86XK_Display),      spawn "xbacklight -inc 10")
          --, ((0, xF86XK_MonBrightnessDown),    spawn "xbacklight -dec 10")
          --YUNOWORKING?, ((modm .|. shiftMask, xK_s), spawn "/usr/bin/gnome-screenshot -a")
