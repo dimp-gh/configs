@@ -1,0 +1,19 @@
+#!/bin/bash
+
+case "$1" in
+    "up" )
+	amixer sset Master 5%+ &> /dev/null
+	;;
+    "down" )
+	amixer sset Master 5%- %> /dev/null
+	;;
+    "mute" )
+	amixer sset Master 0% &> /dev/null
+	;;
+    "set" )
+	amixer sset Master "$2%" &> /dev/null 
+	;;
+    * )
+	;;
+esac
+amixer sget Master | egrep -o '[0-9]+%' | head -1
