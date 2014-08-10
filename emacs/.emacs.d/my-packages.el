@@ -19,6 +19,7 @@
 	org-journal
 	auctex
 	haskell-mode
+	org
 ))
 
 (require 'package)
