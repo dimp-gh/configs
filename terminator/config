@@ -8,7 +8,7 @@
   title_transmit_bg_color = "#1e2320"
   title_inactive_bg_color = "#2e3330"
 [keybindings]
-  hide_window = <Primary>grave
+  hide_window = <Shift>Return
 [profiles]
   [[default]]
     scrollbar_position = hidden
@@ -16,13 +16,14 @@
     copy_on_selection = True
     visible_bell = True
     use_system_font = False
-    custom_command = zsh
+    background_image = None
     active_encodings = ANSI_X3.4-1968, UTF-8, ISO-8859-1
     foreground_color = "#dcdccc"
     use_custom_command = True
     exit_action = restart
+    custom_command = zsh
     antialias = False
-    font = Monaco 10
+    font = Monaco 9
     background_color = "#3a3a3a"
     cursor_blink = False
     scrollback_infinite = True
