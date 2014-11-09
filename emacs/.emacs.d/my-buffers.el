@@ -33,10 +33,9 @@
 
 ;; set a beautiful title bar
 (setq frame-title-format
-      '("%S: " (buffer-file-name
-                "%f"
-                (dired-directory dired-directory "%b"))))
-
+      '(buffer-file-name
+	"%f"
+	(dired-directory dired-directory "%b")))
 
 
 ;;;; Делаем чтоб Shift-M-`Arrow keys` ресайзило окна
