@@ -1,0 +1,9 @@
+<Applications>
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/apps/urxvt.xbm)^fg() xterm
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/apps/thunar.xbm)^fg() evince
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/apps/google-chrome.xbm)^fg() firefox
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/apps/gimp.xbm)^fg() skype
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/apps/emacs.xbm)^fg() emacs
+<System Control>
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/half.xbm)^fg() systemctl reboot
+ ^fg(#bdbdbd)^i(/home/dmand/.xmonad/dzen2/empty.xbm)^fg() systemctl poweroff
